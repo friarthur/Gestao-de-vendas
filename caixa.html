@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Vendas - Caixa</title>
+    <link rel="stylesheet" href="caixa.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <div class="produtos">
+        <table>
+            <thead>
+                <th>Código do Produto</th>
+                <th>Nome do Produto</th>
+                <th>Tipo do Produto</th>
+                <th>Valor do Produto</th>
+            </thead>
+            <tbody id="tabelaProdutosBody"></tbody>
+        </table>
+        <p id="total">Total: R$ 0.00</p>
+    </div>
+
+    <div class="sistema">
+        <label for="codigo">Digite o código:</label>
+        <input type="number" id="codigo"><br>
+
+        <label for="nomeProduto">Nome do Produto:</label>
+        <input type="text" id="nomeProduto"><br>
+
+        <label for="tipoProduto">Tipo do Produto:</label>
+        <input type="text" id="tipoProduto"><br>
+
+        <label for="valorProduto">Valor do Produto:</label>
+        <input type="text" id="valorProduto"><br>
+
+        <button onclick="adicionarProduto()">Adicionar Produto</button>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <!-- Modal de Escolha de Pagamento -->
+    <div id="modalPagamento" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalPagamento()">&times;</span>
+            <p>Escolha a forma de pagamento:</p>
+            <button onclick="processarFormaPagamento('Dinheiro')">Dinheiro</button>
+            <button onclick="processarFormaPagamento('Crédito')">Crédito</button>
+            <button onclick="processarFormaPagamento('Débito')">Débito</button>
+            <button onclick="processarFormaPagamento('Pix')">Pix</button>
+            <button onclick="processarFormaPagamento('Cartão Grap tech')">Cartão Grap tech</button>
+        </div>
+    </div>
+    <div>
+        <button class="voltar" onclick="voltar()">Voltar</button>
+    </div>
+
+    <script src="caixa.js"></script>
+</body>
+</html>
